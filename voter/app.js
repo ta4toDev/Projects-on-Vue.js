@@ -7,13 +7,13 @@ const app = Vue.createApp({
       };
     },
     computed: {
-      totalVotes() {
+      totalVotes() { //berechnet die Gesamtzahl der Stimmen
         // console.log("computed property ausgeführt.");
         return this.submissions.reduce((totalVotes, submission) => {
           return totalVotes + submission.votes;
         }, 0);
       },
-      sortedSubmissions() {
+      sortedSubmissions() {  // und sortiert nach der Anzahl
         return this.submissions.sort((a, b) => {
           return b.votes - a.votes;
         });
@@ -95,7 +95,7 @@ const app = Vue.createApp({
         );
         submission.votes++;
       }, */
-      upvote() {
+      upvote() {  //erhöht die stimmenanzahl ,wenn Nutzer klickt
         this.submission.votes++;
       },
     },
